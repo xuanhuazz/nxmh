@@ -1,22 +1,29 @@
 <template>
-<div class="header">
-  <div>
-    <img src="@/assets/logo.png" alt="" class="logo">
+  <div class="header">
+    <div class="logo">
+      <img src="@/assets/logo.png" alt="" />
+    </div>
+    <div class="title">宁夏国资国企在线监管系统</div>
+    <div class="input">
+      <el-input placeholder="请输入要搜索的关键字" suffix-icon="el-icon-search" class="input-el"></el-input>
+      <i class="iconfont icon-tongzhi"></i>
+    </div>
+    <div class="information">
+      <div class="head">
+        <img src="@/assets/logo.png" alt="">
+      </div>
+      <div class="name">
+        浪潮er
+      </div>
+      <i class="iconfont icon-sanjiao1"></i>
+    </div>
   </div>
-  <div class="title">宁夏国资国企在线监管系统我改了改</div>
-  <el-input class="input"
-    placeholder="请选择日期"
-    suffix-icon="el-icon-date"
-    v-model="input1">
-  </el-input>
-</div>
-
 </template>
 
 <script>
 export default {
-  name:'Header'
-}
+  name: "Header",
+};
 </script>
 
 <style scoped lang="less">
@@ -24,21 +31,70 @@ export default {
   width: 100%;
   height: 100px;
   background-color: pink;
+  display: flex;
   .logo {
-    width: 4%;
-    height: 50%;
-    margin: 24px 0 0 30px;
-  }
+    width: 5%;
+    height: 100px;
+    margin-left: 2%;
+    img {
+      width: 80%;
+      height: 80%;
+      margin-top: 10px;
+      }
+    }
   .title {
-    display: inline-block;
-    width: 30%;
-    height: 50%;
+    width: 60%;
+    line-height: 100px;
+    font-size: 28px;
     color: white;
-    font-size: 27px;
-    margin: -5px 0 0 30px;
-  }
+    }
   .input {
-    width: 30%;
+    width: 22%;
+    margin-top: 30px;
+    .input-el {
+      display: inline-block;
+      width: 80%;
+      
+    }
+    .icon-tongzhi {
+      margin-left: 10%;
+      color: white;
+      font-size: 25px;
+      vertical-align: middle;
+    }
   }
+  .information {
+    display: flex;
+    width: 10%;
+    height: 100%;
+    // justify-content:space-around;
+    align-items: center;
+    .head {
+      width: 15%;
+      height: 35%;
+      border: 1px solid white;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-left: 10%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .name {
+      font-size: 18px;
+      color: white;
+      margin-left: 10%;
+    }
+    .icon-sanjiao1 {
+      color: white;
+      margin-left: 4%;
+    }
+  }
+}
+</style>
+<style >
+.el-input__inner {
+  height: 50px!important;
 }
 </style>
