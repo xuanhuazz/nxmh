@@ -30,7 +30,7 @@ export default {
 .header {
   width: 100%;
   height: 100px;
-  background-color: pink;
+  background-color: rgb(17,100,220);
   display: flex;
   .logo {
     width: 5%;
@@ -49,7 +49,7 @@ export default {
     color: white;
     }
   .input {
-    width: 22%;
+    width: 20%;
     margin-top: 30px;
     .input-el {
       display: inline-block;
@@ -57,7 +57,7 @@ export default {
       
     }
     .icon-tongzhi {
-      margin-left: 10%;
+      margin-left: 4%;
       color: white;
       font-size: 25px;
       vertical-align: middle;
@@ -84,7 +84,7 @@ export default {
     .name {
       font-size: 18px;
       color: white;
-      margin-left: 10%;
+      margin-left: 6%;
     }
     .icon-sanjiao1 {
       color: white;
