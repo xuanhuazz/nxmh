@@ -2,14 +2,16 @@
   <div>
     <el-row :gutter="20">
       <el-col :span="14">
-        <div class="left">
+        <div class="left left1">
           <Tabs />
         </div>
         <div class="left">
           <p>工作日历</p>
-          <Calendar />
+          <Schedule />
         </div>
-        <div class="left"></div>
+        <div class="left left3">
+          <News />
+        </div>
       </el-col>
       <el-col :span="10"><div class="right">
           <TabsTimeLine />
@@ -21,10 +23,11 @@
 <script>
 import Tabs from "@/pages/tabs";
 import TabsTimeLine from "@/pages/tabs_timeline";
-import Calendar from '@/pages/calendar'
+import Schedule from '@/pages/schedule'
+import News from '@/pages/news'
 export default {
   name: "Body",
-  components: { Tabs, TabsTimeLine,Calendar },
+  components: { Tabs, TabsTimeLine,Schedule,News },
 };
 </script>
 <style lang="less" scoped>
@@ -33,12 +36,18 @@ export default {
   padding-top: 20px;
   border-radius: 24px;
   min-height: 36px;
-  height: 431px;
+  height: 450px;
   margin-bottom: 20px;
   background-color: rgb(255, 255, 255);
   &:last-child {
     margin-bottom: 0;
   }
+}
+.left1 {
+  height: 410px;
+}
+.left3 {
+  height: 435px;
 }
 /* 右侧部分 */
 .right {
