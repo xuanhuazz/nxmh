@@ -1,22 +1,38 @@
 <template>
   <div>
-    <el-calendar :range="['2019-03-03', '2019-03-09']" first-day-of-week="7">
+    <el-calendar :range="['2019-03-03', '2019-03-09']" first-day-of-week= 7>
     </el-calendar>
     <div class="block">
       <div class="time">
         <span>9:00AM</span>
         <span>16:30PM</span>
+        <span>9:00AM</span>
+        <span>16:30PM</span>
       </div>
       <div class="timeline">
         <el-timeline>
-          <el-timeline-item timestamp="2018/4/12" hide-timestamp="true">
+          <el-timeline-item timestamp="2018/4/12" hide-timestamp= true>
             <el-card>
               <span></span>
               <h4>更新 Github 模板</h4>
               <p>王小虎 提交于 2018/4/12 20:46</p>
             </el-card>
           </el-timeline-item>
-          <el-timeline-item timestamp="2018/4/3" hide-timestamp="true">
+          <el-timeline-item timestamp="2018/4/3" hide-timestamp=true>
+            <el-card>
+              <span class="shu"></span>
+              <h4>更新 Github 模板</h4>
+              <p>王小虎 提交于 2018/4/3 20:46</p>
+            </el-card>
+          </el-timeline-item>
+          <el-timeline-item timestamp="2018/4/3" hide-timestamp=true>
+            <el-card>
+              <span class="shu"></span>
+              <h4>更新 Github 模板</h4>
+              <p>王小虎 提交于 2018/4/3 20:46</p>
+            </el-card>
+          </el-timeline-item>
+          <el-timeline-item timestamp="2018/4/3" hide-timestamp=true>
             <el-card>
               <span class="shu"></span>
               <h4>更新 Github 模板</h4>
@@ -25,9 +41,9 @@
           </el-timeline-item>
         </el-timeline>
       </div>
-      <div class="addNew">
+    </div>
+    <div class="addNew">
         <i class="iconfont icon-jiahao1"></i> 新增日程
-      </div>
     </div>
   </div>
 </template>
@@ -51,6 +67,8 @@ export default {
   display: flex;
   margin-top: -25px;
   flex-wrap: wrap;
+  height: 215px;
+  overflow: auto;
   &:first-child {
     margin-top: 0;
   }
@@ -70,16 +88,16 @@ export default {
     width: 86%;
     margin-left: -5px;
   }
-  .addNew {
-    width: 100%;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    margin-top: -12px;
-    color: blue;
-    i {
-      font-size: 18px;
-    }
+}
+.addNew {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  margin-top: -4px;
+  color: blue;
+  i {
+    font-size: 18px;
   }
 }
 .line {
@@ -87,6 +105,24 @@ export default {
   height: 1px;
   margin-left: 10px;
   background-color: pink;
+}
+/* 设置滚动条的样式 */
+::-webkit-scrollbar {
+  width: 12px;
+}
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset006pxrgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset006pxrgba(0, 0, 0, 0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(210, 210, 210, 0.5);
 }
 </style>
 
@@ -156,6 +192,7 @@ export default {
 // tbody去掉border
 .current {
   border: none !important;
+  padding: 0;
 }
 // tbody内容居中设置高度
 .el-calendar-table .el-calendar-day {
@@ -164,5 +201,7 @@ export default {
   height: 60px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  
 }
 </style>

@@ -5,7 +5,7 @@
     </div>
     <div class="title">宁夏国资国企在线监管系统</div>
     <div class="input">
-      <el-input placeholder="请输入要搜索的关键字" suffix-icon="el-icon-search" class="input-el"></el-input>
+      <el-input placeholder="请输入要搜索的关键字" suffix-icon="el-icon-search" class="input-el" v-model="input"></el-input>
       <i class="iconfont icon-tongzhi"></i>
     </div>
     <div class="information">
@@ -23,6 +23,11 @@
 <script>
 export default {
   name: "Header",
+  data(){
+    return {
+      input:''
+    }
+  }
 };
 </script>
 

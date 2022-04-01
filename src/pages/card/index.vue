@@ -30,42 +30,24 @@
         <span>国资监管</span>
       </a>
     </div>
-    <div>
-      <a href="">
+    <div @click="addCommon">
+      <a href="#">
         <img src="@/assets/logo.png" alt="" />
-        <span>国资监管</span>
+        <span>添加</span>
       </a>
     </div>
-    <div>
-      <a href="">
-        <img src="@/assets/logo.png" alt="" />
-        <span>国资监管</span>
-      </a>
-    </div>
-    <div>
-      <a href="">
-        <img src="@/assets/logo.png" alt="" />
-        <span>国资监管</span>
-      </a>
-    </div>
-    <div>
-      <a href="">
-        <img src="@/assets/logo.png" alt="" />
-        <span>国资监管</span>
-      </a>
-    </div>
-    <div>
-      <a href="">
-        <img src="@/assets/logo.png" alt="" />
-        <span>国资监管</span>
-      </a>
-    </div>
+
   </div>
 </template>
 
 <script>
 export default {
   name: "First",
+  methods:{
+    addCommon(){
+      this.$store.dispatch('categoryList')
+    }
+  }
 };
 </script>
 
