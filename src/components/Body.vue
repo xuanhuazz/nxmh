@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div >
     <el-row :gutter="20">
       <el-col :span="14">
         <div class="left left1">
@@ -31,6 +31,7 @@ export default {
 };
 </script>
 <style lang="less" scoped>
+
 /* 左侧部分 */
 .left {
   padding-top: 20px;
@@ -42,16 +43,22 @@ export default {
   &:last-child {
     margin-bottom: 0;
   }
+  p{
+    margin-left: 20px;
+  }
 }
 .left1 {
   height: 410px;
+  padding-left: 20px;
 }
 .left3 {
   height: 435px;
+  padding-left: 25px;
 }
 /* 右侧部分 */
 .right {
   padding-top: 20px;
+  padding-left: 25px;
   border-radius: 24px;
   min-height: 36px;
   height: 1375px;

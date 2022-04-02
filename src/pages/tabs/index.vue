@@ -4,17 +4,17 @@
       <Card />
     </el-tab-pane>
     <el-tab-pane label="全部应用" name="second" class="tabs configure">
-      <Card />
+      <Alcard />
     </el-tab-pane>
   </el-tabs>
 </template>
 
 <script>
 import Card from "../card";
-
+import Alcard from '../alcard'
 export default {
   name: "Tabs_card",
-  components: { Card },
+  components: { Card,Alcard },
   data() {
     return {
       activeName: "first",

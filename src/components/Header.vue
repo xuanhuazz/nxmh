@@ -102,4 +102,11 @@ export default {
 .el-input__inner {
   height: 50px!important;
 }
+.el-input__icon {
+    height: 100%;
+    width: 25px;
+    text-align: center;
+    transition: all .3s;
+    line-height: 50px;
+}
 </style>

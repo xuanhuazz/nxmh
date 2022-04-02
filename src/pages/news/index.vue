@@ -106,7 +106,7 @@ ul {
     align-items: center;
     margin: 10px 0;
     .cir {
-      width: 3px;
+      width: 13px;
       height: 13px;
       border-radius: 50%;
       background-color: rgb(2, 115, 255);

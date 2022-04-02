@@ -143,7 +143,7 @@ export default {
 // 球
 .el-timeline-item__node--normal {
     left: -4px;
-    width: 1px;
+    width: 12px;
     height: 12px;
 }
 // 时间显示
@@ -159,6 +159,7 @@ export default {
 // 内容字体大小
 .el-card__body {
   font-size: 20px !important;
+  padding-left: 30px;
   p {
     margin-top: 11px;
     font-size: 16px;
