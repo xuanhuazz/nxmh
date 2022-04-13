@@ -2,92 +2,30 @@
   <div>
     <h4>新闻通知</h4>
     <ul>
-      <li class="lili">
+      <li class="lili" v-for="(news,index) in newsList" :key="news.id">
         <div class="cir"></div>
-        <a href="" class="information">
-          自治区发展改革委印发《有序用电管理细则》的通知
-          <span class="new">NEW</span>
+        <a :href="news.linkAddress" class="information">
+          {{news.title}}
+          <span class="new" v-if="index<2">NEW</span>
         </a>
-        <a href="" class="date">2021-08-26</a>
-      </li>
-      <li class="lili">
-        <div class="cir"></div>
-        <a href="" class="information">
-          自治区发展改革委印发《有序用电管理细则》的通知了吗没有通知啊
-          <span class="new">NEW</span>
-        </a >
-        <a href="" class="date">2021-08-26</a>
-      </li>
-      <li class="lili">
-        <div class="cir"></div>
-        <a href="" class="information"
-          >自治区发展改革委印发《有序用电管理细则》的通知</a
-        >
-        <a href="" class="date">2021-08-26</a>
-      </li>
-      <li class="lili">
-        <div class="cir"></div>
-        <a href="" class="information"
-          >自治区发展改革委印发《有序用电管理细则》的通知</a
-        >
-        <a href="" class="date">2021-08-26</a>
-      </li>
-      <li class="lili">
-        <div class="cir"></div>
-        <a href="" class="information"
-          >自治区发展改革委印发《有序用电管理细则》的通知</a
-        >
-        <a href="" class="date">2021-08-26</a>
-      </li>
-      <li class="lili">
-        <div class="cir"></div>
-        <a href="" class="information"
-          >自治区发展改革委印发《有序用电管理细则》的通知</a
-        >
-        <a href="" class="date">2021-08-26</a>
-      </li>
-      <li class="lili">
-        <div class="cir"></div>
-        <a href="" class="information"
-          >自治区发展改革委印发《有序用电管理细则》的通知</a
-        >
-        <a href="" class="date">2021-08-26</a>
-      </li>
-      <li class="lili">
-        <div class="cir"></div>
-        <a href="" class="information"
-          >自治区发展改革委印发《有序用电管理细则》的通知</a
-        >
-        <a href="" class="date">2021-08-26</a>
-      </li>
-      <li class="lili">
-        <div class="cir"></div>
-        <a href="" class="information"
-          >自治区发展改革委印发《有序用电管理细则》的通知</a
-        >
-        <a href="" class="date">2021-08-26</a>
-      </li>
-      <li class="lili">
-        <div class="cir"></div>
-        <a href="" class="information"
-          >自治区发展改革委印发《有序用电管理细则》的通知</a
-        >
-        <a href="" class="date">2021-08-26</a>
-      </li>
-      <li class="lili">
-        <div class="cir"></div>
-        <a href="" class="information"
-          >自治区发展改革委印发《有序用电管理细则》的通知</a
-        >
-        <a href="" class="date">2021-08-26</a>
+        <a href="" class="date">{{news.addTime}}</a>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
 export default {
   name: "News",
+  mounted(){
+    this.$store.dispatch('newsList')
+  },
+  computed:{
+    ...mapState({
+      newsList:state => state.news.newsList
+    })
+  }
 };
 </script>
 

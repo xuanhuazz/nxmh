@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>时间轴圆点</title>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#F99F22" offset="0%"></stop>
+            <stop stop-color="#F6D365" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="工作台" transform="translate(-130.000000, -684.000000)" fill="url(#linearGradient-1)">
+            <g id="不同状态下的项目数量备份" transform="translate(16.000000, 440.000000)">
+                <g id="编组-8" transform="translate(0.000000, 56.000000)">
+                    <g id="编组-29" transform="translate(48.000000, 174.000000)">
+                        <g id="时间轴圆点" transform="translate(66.000000, 14.000000)">
+                            <circle id="椭圆形" cx="6" cy="6" r="4"></circle>
+                            <circle id="椭圆形" opacity="0.397228423" cx="6" cy="6" r="6"></circle>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

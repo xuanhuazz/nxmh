@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="12px" viewBox="0 0 13 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>日历关联</title>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="工作台弹窗2" transform="translate(-789.000000, -410.000000)" fill="#848C9A">
+            <g id="弹窗" transform="translate(582.000000, 220.000000)">
+                <g id="编组-8" transform="translate(51.000000, 74.000000)">
+                    <g id="编组-14" transform="translate(0.000000, 110.000000)">
+                        <g id="编组-8" transform="translate(156.500000, 6.000000)">
+                            <path d="M11.2484375,4 L0.375,4 C0.30625,4 0.25,4.05294118 0.25,4.11764706 L0.25,5 C0.25,5.06470588 0.30625,5.11764706 0.375,5.11764706 L9.83125,5.11764706 L7.5765625,7.80882353 C7.5125,7.88529412 7.5703125,8 7.675,8 L8.8078125,8 C8.884375,8 8.95625,7.96764706 9.0046875,7.91029412 L11.6421875,4.76176471 C11.9,4.45294118 11.6671875,4 11.2484375,4 L11.2484375,4 Z" id="形状" transform="translate(6.000067, 6.000000) scale(1, -1) translate(-6.000067, -6.000000) "></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

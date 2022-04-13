@@ -25,6 +25,7 @@ export default {
       console.log(tab, event);
     },
   },
+  
 };
 </script>
 

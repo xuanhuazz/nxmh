@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="56px" height="56px" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>三重一大</title>
+    <defs>
+        <linearGradient x1="5.03111757%" y1="0%" x2="57.9027191%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#00D5FF" offset="0%"></stop>
+            <stop stop-color="#2AB3FF" offset="100%"></stop>
+        </linearGradient>
+        <path d="M22.5520443,40.8356825 C32.879616,39.7924628 40.9403077,31.0736935 40.9403077,20.4701538 C40.9403077,9.16456369 31.775744,0 20.4701538,0 C9.16456369,0 0,9.16456369 0,20.4701538 C0,25.7453883 2.01214031,30.5384369 5.28888123,34.1684775 L3.65581785,39.069184 C3.34952369,39.9895828 4.03489477,40.9403077 5.00533169,40.9403077 L22.5520443,40.8356825 Z" id="path-2"></path>
+        <linearGradient x1="5.03111757%" y1="0%" x2="57.9027191%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0.0681203562%"></stop>
+            <stop stop-color="#C2EAFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="工作台" transform="translate(-520.000000, -176.000000)">
+            <g id="不同状态下的项目数量" transform="translate(16.000000, 96.000000)">
+                <g id="编组-12备份-14" transform="translate(502.000000, 80.000000)">
+                    <g id="编组-18" transform="translate(2.000000, 0.000000)">
+                        <g id="Group-10" transform="translate(4.048000, 5.419200)">
+                            <g id="Oval" transform="translate(0.000000, 3.721846)">
+                                <mask id="mask-3" fill="white">
+                                    <use xlink:href="#path-2"></use>
+                                </mask>
+                                <use id="Mask" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                                <circle fill-opacity="0.8" fill="url(#linearGradient-4)" style="mix-blend-mode: multiply;" mask="url(#mask-3)" cx="27.9138462" cy="16.7483077" r="20.4701538"></circle>
+                            </g>
+                            <circle id="Oval" fill-opacity="0.8" fill="url(#linearGradient-4)" style="mix-blend-mode: multiply;" cx="27.9138462" cy="20.4701538" r="20.4701538"></circle>
+                            <g id="line-discuss（讨论）" transform="translate(10.080000, 14.400000)" fill-rule="nonzero">
+                                <rect id="矩形" fill="#000000" opacity="0" x="0" y="0" width="20.736" height="20.736"></rect>
+                                <path d="M16.416,2.592 L1.72799999,2.592 C1.20959999,2.592 0.864000007,2.93760001 0.864000007,3.45600001 L0.864000007,12.96 L2.592,12.96 L2.592,4.31999999 L16.416,4.31999999 L16.416,2.592 Z M19.008,6.04800001 L5.184,6.04800001 C4.6656,6.04800001 4.31999999,6.39360001 4.31999999,6.91199999 L4.31999999,15.552 C4.31999999,16.0704 4.6656,16.416 5.184,16.416 L9.93600001,16.416 L12.096,19.44 L14.256,16.416 L19.008,16.416 C19.5264,16.416 19.872,16.0704 19.872,15.552 L19.872,6.91199999 C19.872,6.39359999 19.5264,6.04800001 19.008,6.04800001 Z M18.144,14.688 L13.392,14.688 L12.096,16.5024 L10.8,14.688 L6.04800001,14.688 L6.04800001,7.776 L18.144,7.776 L18.144,14.688 Z" id="形状" fill="#FFFFFF"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

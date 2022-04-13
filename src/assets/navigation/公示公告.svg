@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>公示公告</title>
+    <defs>
+        <linearGradient x1="10.3167162%" y1="0%" x2="56.9738412%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#00D5FF" offset="0%"></stop>
+            <stop stop-color="#2AB3FF" offset="100%"></stop>
+        </linearGradient>
+        <path d="M25.130579,26.6582177 L15.1671542,32.2410763 C14.2331515,32.7649746 13.1099422,32.7649746 12.1759394,32.2410763 L2.21251464,26.6582177 C0.84978936,25.8950078 0,24.4138632 0,22.803361 L0,7.90567693 C0,5.48884569 1.88441064,3.528 4.20738696,3.528 L23.1357067,3.528 C25.458683,3.528 27.342,5.48884569 27.342,7.90567693 L27.342,22.803361 C27.342,24.4138632 26.4933043,25.8950078 25.130579,26.6582177" id="path-2"></path>
+        <linearGradient x1="10.3167162%" y1="0%" x2="56.9738412%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0.0681203562%"></stop>
+            <stop stop-color="#C2EAFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="工作台弹窗1" transform="translate(-655.000000, -405.000000)">
+            <g id="编组-23" transform="translate(320.000000, 150.000000)">
+                <g id="编组-6备份" transform="translate(316.000000, 146.000000)">
+                    <g id="人员备份-7" transform="translate(0.000000, 104.000000)">
+                        <g id="编组-13" transform="translate(19.000000, 5.000000)">
+                            <g id="Fill-1" transform="translate(3.500000, 3.500000)">
+                                <mask id="mask-3" fill="white">
+                                    <use xlink:href="#path-2"></use>
+                                </mask>
+                                <use id="Mask" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                                <text id="59A1FF" mask="url(#mask-3)" font-family="PingFangSC-Regular, PingFang SC" font-size="12.348" font-weight="normal" line-spacing="17.64" fill="#000000" fill-opacity="0.85">
+                                    <tspan x="29.208312" y="11.236">59A1FF</tspan>
+                                </text>
+                                <text id="59A1FF" mask="url(#mask-3)" font-family="PingFangSC-Regular, PingFang SC" font-size="12.348" font-weight="normal" line-spacing="17.64" fill="#000000" fill-opacity="0.85">
+                                    <tspan x="29.208312" y="11.236">59A1FF</tspan>
+                                </text>
+                                <path d="M30.422579,23.1302177 L20.4591542,28.7130763 C19.5251515,29.2369746 18.4019422,29.2369746 17.4679394,28.7130763 L7.50451464,23.1302177 C6.14178936,22.3670078 5.292,20.8858632 5.292,19.275361 L5.292,4.37767693 C5.292,1.96084569 7.17641064,0 9.49938696,0 L28.4277067,0 C30.750683,0 32.634,1.96084569 32.634,4.37767693 L32.634,19.275361 C32.634,20.8858632 31.7853043,22.3670078 30.422579,23.1302177" fill-opacity="0.8" fill="url(#linearGradient-4)" style="mix-blend-mode: multiply;" mask="url(#mask-3)"></path>
+                                <path d="M30.422579,23.1302177 L20.4591542,28.7130763 C19.5251515,29.2369746 18.4019422,29.2369746 17.4679394,28.7130763 L7.50451464,23.1302177 C6.14178936,22.3670078 5.292,20.8858632 5.292,19.275361 L5.292,4.37767693 C5.292,1.96084569 7.17641064,0 9.49938696,0 L28.4277067,0 C30.750683,0 32.634,1.96084569 32.634,4.37767693 L32.634,19.275361 C32.634,20.8858632 31.7853043,22.3670078 30.422579,23.1302177" fill-opacity="0.8" fill="url(#linearGradient-4)" style="mix-blend-mode: multiply;"></path>
+                                <rect id="Rectangle" fill="#FFFFFF" fill-rule="nonzero" x="6.174" y="11.466" width="2.646" height="2.646" rx="0.9702"></rect>
+                                <rect id="Rectangle" fill="#FFFFFF" fill-rule="nonzero" x="11.466" y="11.466" width="9.702" height="2.646" rx="0.9702"></rect>
+                                <rect id="Rectangle" fill="#FFFFFF" fill-rule="nonzero" x="6.174" y="17.64" width="2.646" height="2.646" rx="0.9702"></rect>
+                                <rect id="Rectangle" fill="#FFFFFF" fill-rule="nonzero" x="11.466" y="17.64" width="9.702" height="2.646" rx="0.9702"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

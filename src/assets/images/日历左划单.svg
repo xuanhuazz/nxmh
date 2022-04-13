@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>日历左划单</title>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="工作台弹窗3" transform="translate(-711.000000, -450.000000)">
+            <g id="编组-6" transform="translate(671.000000, 434.000000)">
+                <g id="日历左划单" transform="translate(40.000000, 16.000000)">
+                    <rect id="矩形" transform="translate(8.000000, 8.000000) scale(-1, 1) translate(-8.000000, -8.000000) " x="0" y="0" width="16" height="16"></rect>
+                    <path d="M10.3707983,7.70080433 L5.6355042,3.52037588 C5.57983193,3.47169722 5.5,3.51562675 5.5,3.5951748 L5.5,4.51294566 C5.5,4.5711226 5.52415966,4.62692496 5.56407563,4.6625435 L9.34558824,8 L5.56407563,11.3374565 C5.52310924,11.373075 5.5,11.4288774 5.5,11.4870543 L5.5,12.4048252 C5.5,12.4843733 5.58088235,12.5283028 5.6355042,12.4796241 L10.3707983,8.29919567 C10.5430672,8.14722327 10.5430672,7.85277673 10.3707983,7.70080433 Z" id="路径" fill="#2D2F33" transform="translate(8.000000, 8.000000) scale(-1, 1) translate(-8.000000, -8.000000) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -2,18 +2,18 @@
   <div >
     <el-row :gutter="20">
       <el-col :span="14">
-        <div class="left left1">
+        <div class="bg-w left1">
           <Tabs />
         </div>
-        <div class="left">
+        <div class="bg-w">
           <p>工作日历</p>
           <Schedule />
         </div>
-        <div class="left left3">
+        <div class="bg-w left3">
           <News />
         </div>
       </el-col>
-      <el-col :span="10"><div class="right">
+      <el-col :span="10"><div class="bg-w right ">
           <TabsTimeLine />
       </div></el-col>
     </el-row>
@@ -33,7 +33,7 @@ export default {
 <style lang="less" scoped>
 
 /* 左侧部分 */
-.left {
+.bg-w {
   padding-top: 20px;
   border-radius: 24px;
   min-height: 36px;
@@ -57,12 +57,8 @@ export default {
 }
 /* 右侧部分 */
 .right {
-  padding-top: 20px;
   padding-left: 25px;
-  border-radius: 24px;
-  min-height: 36px;
   height: 1375px;
-  background-color: rgb(255, 255, 255);
 }
 
 </style>

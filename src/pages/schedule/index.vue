@@ -1,110 +1,244 @@
 <template>
-  <div>
-    <el-calendar :range="['2019-03-03', '2019-03-09']" first-day-of-week= 7>
+  <div class="schedule-content">
+    <i class="left-h"><img src="@/assets/images/日历左划.svg" alt=""></i>
+    <i class="left-r"><img src="@/assets/images/日历右划.svg" alt=""></i>
+    <el-calendar :range="['2022-4-3', '2022-04-09']" first-day-of-week= 7 v-model="time" >
+        <template
+        slot="dateCell"
+        slot-scope="{date, data}">
+        <p class="viewp" @click="view">
+          {{data.day.slice(8,10)}}
+        </p>
+      </template>
     </el-calendar>
     <div class="block">
-      <div class="time">
-        <span>9:00AM</span>
-        <span>16:30PM</span>
-        <span>9:00AM</span>
-        <span>16:30PM</span>
+      <div class="time" >
+        <span v-for="(data,index) in schList" :key="index">{{data.startTime}}</span>
       </div>
       <div class="timeline">
         <el-timeline>
-          <el-timeline-item timestamp="2018/4/12" hide-timestamp= true>
+          <el-timeline-item timestamp="2018/4/12"  hide-timestamp= true v-for="(data,index) in schList" :key="index">
             <el-card>
               <span></span>
-              <h4>更新 Github 模板</h4>
-              <p>王小虎 提交于 2018/4/12 20:46</p>
-            </el-card>
-          </el-timeline-item>
-          <el-timeline-item timestamp="2018/4/3" hide-timestamp=true>
-            <el-card>
-              <span class="shu"></span>
-              <h4>更新 Github 模板</h4>
-              <p>王小虎 提交于 2018/4/3 20:46</p>
-            </el-card>
-          </el-timeline-item>
-          <el-timeline-item timestamp="2018/4/3" hide-timestamp=true>
-            <el-card>
-              <span class="shu"></span>
-              <h4>更新 Github 模板</h4>
-              <p>王小虎 提交于 2018/4/3 20:46</p>
-            </el-card>
-          </el-timeline-item>
-          <el-timeline-item timestamp="2018/4/3" hide-timestamp=true>
-            <el-card>
-              <span class="shu"></span>
-              <h4>更新 Github 模板</h4>
-              <p>王小虎 提交于 2018/4/3 20:46</p>
+              <h4>{{data.title}}</h4>
+              <p>{{data.content}}</p>
             </el-card>
           </el-timeline-item>
         </el-timeline>
       </div>
     </div>
-    <div class="addNew">
+    <div class="addNew" @click="addSchedule">
         <i class="iconfont icon-jiahao1"></i> 新增日程
     </div>
+    <!-- 新增日程隐藏框 -->
+    <el-dialog title="新增日程" :visible.sync="dialogFormVisible" custom-class="schedule-dialog">
+      <div class="schedule">
+        <el-form :model="form">
+          <el-form-item label="标题" >
+            <el-input v-model="form.title" class="biaoti" size="small"></el-input>
+          </el-form-item>
+            <el-form-item label="内容">
+              <el-input type="textarea" :rows="3" v-model="form.content" class="neirong" ref="inp"></el-input>
+            </el-form-item>
+          <el-form-item label="时间" :label-width="formLabelWidth">
+                <el-date-picker
+                  v-model="value"
+                  type="datetimerange"
+                  range-separator="→"
+                  start-placeholder="开始日期"
+                  value-format='yyyy-MM-dd hh:mm:ss'
+                  end-placeholder="结束日期" class="time">
+                </el-date-picker>
+          </el-form-item>
+        </el-form>
+      </div>
+      
+      <div slot="footer" class="dialog-footer">
+        <el-button @click="dialogFormVisible = false">取 消</el-button>
+        <el-button type="primary" @click="makeSure">确 定</el-button>
+      </div>
+    </el-dialog>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   name: "First",
+  data(){
+    return{
+      dialogFormVisible:false,  //新建日常
+      form: {
+          title: '',
+          region: '',
+          date1: '',
+          date2: '',
+          delivery: false,
+          type: [],
+          content: '',
+          desc: ''
+        },
+      value:'',
+      time:new Date(),
+      textarea:'',
+      dataList:[
+        {time:'2021',title:'我是标题',content:'内容'},
+        {time:'2022',title:'我是标题',content:'内容'},
+        {time:'2023',title:'我是标题',content:'内容'},
+        {time:'2024',title:'我是标题',content:'内容'},
+        {time:'2025',title:'我是标题',content:'内容'},
+      ]
+    }
+  },
   mounted() {
     let el = document.getElementsByClassName("el-timeline-item__node--normal");
     console.log(el);
     for (let i = 0; i < el.length; i++) {
       el[i].classList.add(`circle${i}`);
     }
+    this.$store.dispatch('schList',this.YYY(this.time))
   },
+  computed:{
+    range(){
+      var nowTemp = new Date();//当前时间
+      var oneDayLong = 24*60*60*1000 ;//一天的毫秒数
+      var c_time = nowTemp.getTime() ;//当前时间的毫秒时间
+      var c_day = nowTemp.getDay()||7;//当前时间的星期几
+      var m_time = c_time - (c_day)*oneDayLong;//上周周日的毫秒时间
+      var s_time = c_time + (6-c_day)*oneDayLong;//当前周六的毫秒时间
+      var monday = new Date(m_time);//设置上周周日时间对象
+      var saturday = new Date(s_time);//设置周六时间对象
+      let startTime = this.YYY(monday)
+      let endTime = this.YYY(saturday)
+      let timearr = []
+      timearr.push(startTime)
+      timearr.push(endTime)
+      return timearr
+    },
+    ...mapState({
+      schList:state => state.schedule.schList
+    })
+  },
+  methods:{
+    addSchedule(){
+      this.dialogFormVisible = true
+    },
+    //确定添加日程
+    makeSure(){
+      this.dialogFormVisible = false
+      this.$store.dispatch('addSchedule',{date:this.value[0].slice(0,10),s:this.value[0],e:this.value[1],title:this.form.title,content:this.form.content})
+      this.$store.dispatch('schList',this.YYY(this.time))
+    },
+    //日期格式函数
+    YYY(date){
+      let month = (parseInt(date.getMonth())+1) <10?'0'+(parseInt(date.getMonth())+1).toString():date.getMonth()+1
+      let day = date.getDate()<10?'0'+date.getDate():date.getDate()
+      return date.getFullYear()+'-'+month+'-'+day
+    },
+    view(){
+      setTimeout(()=>{
+        this.$store.dispatch('schList',this.YYY(this.time))
+      },100)
+    }
+    
+  }
 };
 </script>
 
 
 <style lang="less" scoped>
-.block {
-  display: flex;
-  margin-top: -25px;
-  flex-wrap: wrap;
-  height: 215px;
-  overflow: auto;
-  &:first-child {
-    margin-top: 0;
+.schedule-content {
+  margin-top: -10px;
+  padding: 0 30px;
+  .left-h {
+  position: relative;
+  left: 2%;
+  top: 27px;
   }
-  .time {
+  .left-r {
+  position: relative;
+  left: 93%;
+  top: 27px;
+  }
+  .block {
     display: flex;
-    flex-direction: column;
-    align-content: center;
-    width: 10%;
-    margin-left: 10px;
-    span {
-      text-align: center;
-      height: 111px;
-      color: rgb(174, 178, 190);
+    margin-top: -25px;
+    flex-wrap: wrap;
+    height: 215px;
+    overflow: auto;
+    &:first-child {
+      margin-top: 0;
+    }
+    .time {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      width: 10%;
+      margin-left: 10px;
+      span {
+        text-align: center;
+        height: 111px;
+        color: rgb(174, 178, 190);
+      }
+    }
+    .timeline {
+      width: 86%;
+      margin-left: -5px;
     }
   }
-  .timeline {
-    width: 86%;
-    margin-left: -5px;
+  .addNew {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    margin-top: -4px;
+    color: blue;
+    i {
+      font-size: 18px;
+    }
   }
+  .line {
+    width: 92%;
+    height: 1px;
+    margin-left: 10px;
+    background-color: pink;
+  }
+  .schedule {
+      width: 85%;
+      height: 220px;
+      border: 1px solid #DCDFE6;
+      border-radius: 10px;
+      margin-top: -24px;
+      margin-left: 16px;
+      padding: 20px 30px;
+      .biaoti {
+        width: 93%;
+        border-radius: 5px;
+        outline:none;
+        font-size: 18px;
+      }
+      .neirong {
+        width: 93%;
+        border-radius: 5px;
+        font-style: 20px;
+        outline:none;
+      }
+      .time {
+        width: 93%;
+        height: 40px!important;
+      }
 }
-.addNew {
+.dialog-footer {
+  margin-top: -21px;
+  padding-right: 3.5%;
+}
+}
+.viewp{
   width: 100%;
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-  margin-top: -4px;
-  color: blue;
-  i {
-    font-size: 18px;
-  }
-}
-.line {
-  width: 92%;
-  height: 1px;
-  margin-left: 10px;
-  background-color: pink;
+    height: 100%;
+    text-align: center;
+    line-height: 44px;
 }
 /* 设置滚动条的样式 */
 ::-webkit-scrollbar {
@@ -182,6 +316,8 @@ export default {
 .el-calendar__header {
   display: flex;
   justify-content: center;
+  border: none;
+  padding: 2px 20px;
 }
 //日历thead
 .el-calendar__body {
@@ -189,6 +325,7 @@ export default {
     background-color: rgb(247, 249, 255);
   }
 }
+
 // tbody去掉border
 .current {
   border: none !important;
@@ -204,4 +341,16 @@ export default {
   align-items: center;
   
 }
+//修改新增日程框的大小
+.schedule-dialog{
+  height: 400px;
+  width: 42%;
+}
+//修改form为浮动
+.el-form-item__content {
+    width: 90%;
+    font-size: 16px;
+    float: left;
+}
+
 </style>

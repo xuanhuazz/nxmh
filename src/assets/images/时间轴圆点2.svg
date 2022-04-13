@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>时间轴圆点2</title>
+    <defs>
+        <linearGradient x1="50%" y1="12.4281629%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#F8FAFC" offset="0%"></stop>
+            <stop stop-color="#EDF0F5" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="100%" y1="100%" x2="0%" y2="0%" id="linearGradient-2">
+            <stop stop-color="#E6EBEF" offset="0%"></stop>
+            <stop stop-color="#D1D8E7" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="工作台" transform="translate(-130.000000, -768.000000)">
+            <g id="不同状态下的项目数量备份" transform="translate(16.000000, 440.000000)">
+                <g id="编组-8" transform="translate(0.000000, 56.000000)">
+                    <g id="编组-30" transform="translate(48.000000, 258.000000)">
+                        <g id="时间轴圆点2" transform="translate(66.000000, 14.000000)">
+                            <circle id="椭圆形备份-29" fill="url(#linearGradient-1)" cx="6" cy="6" r="6"></circle>
+                            <circle id="椭圆形备份-28" fill="url(#linearGradient-2)" cx="6" cy="6" r="4"></circle>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

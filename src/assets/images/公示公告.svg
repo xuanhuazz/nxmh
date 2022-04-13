@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="56px" height="56px" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>公示公告</title>
+    <defs>
+        <linearGradient x1="10.3167162%" y1="0%" x2="56.9738412%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#00D5FF" offset="0%"></stop>
+            <stop stop-color="#2AB3FF" offset="100%"></stop>
+        </linearGradient>
+        <path d="M35.9008272,38.0831681 L21.6673632,46.0586804 C20.3330736,46.8071065 18.7284888,46.8071065 17.3941992,46.0586804 L3.1607352,38.0831681 C1.2139848,36.9928683 0,34.8769475 0,32.5762301 L0,11.2938242 C0,7.84120813 2.6920152,5.04 6.0105528,5.04 L33.0510096,5.04 C36.3695472,5.04 39.06,7.84120813 39.06,11.2938242 L39.06,32.5762301 C39.06,34.8769475 37.8475776,36.9928683 35.9008272,38.0831681" id="path-2"></path>
+        <linearGradient x1="10.3167162%" y1="0%" x2="56.9738412%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="0.0681203562%"></stop>
+            <stop stop-color="#C2EAFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Fill-1" transform="translate(5.000000, 5.000000)">
+            <mask id="mask-3" fill="white">
+                <use xlink:href="#path-2"></use>
+            </mask>
+            <use id="Mask" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+            <text id="59A1FF" mask="url(#mask-3)" font-family="PingFangSC-Regular, PingFang SC" font-size="17.64" font-weight="normal" line-spacing="25.2" fill="#000000" fill-opacity="0.85">
+                <tspan x="41.72616" y="16.48">59A1FF</tspan>
+            </text>
+            <text id="59A1FF" mask="url(#mask-3)" font-family="PingFangSC-Regular, PingFang SC" font-size="17.64" font-weight="normal" line-spacing="25.2" fill="#000000" fill-opacity="0.85">
+                <tspan x="41.72616" y="16.48">59A1FF</tspan>
+            </text>
+            <path d="M43.4608272,33.0431681 L29.2273632,41.0186804 C27.8930736,41.7671065 26.2884888,41.7671065 24.9541992,41.0186804 L10.7207352,33.0431681 C8.7739848,31.9528683 7.56,29.8369475 7.56,27.5362301 L7.56,6.25382419 C7.56,2.80120813 10.2520152,0 13.5705528,0 L40.6110096,0 C43.9295472,0 46.62,2.80120813 46.62,6.25382419 L46.62,27.5362301 C46.62,29.8369475 45.4075776,31.9528683 43.4608272,33.0431681" fill-opacity="0.8" fill="url(#linearGradient-4)" style="mix-blend-mode: multiply;" mask="url(#mask-3)"></path>
+            <path d="M43.4608272,33.0431681 L29.2273632,41.0186804 C27.8930736,41.7671065 26.2884888,41.7671065 24.9541992,41.0186804 L10.7207352,33.0431681 C8.7739848,31.9528683 7.56,29.8369475 7.56,27.5362301 L7.56,6.25382419 C7.56,2.80120813 10.2520152,0 13.5705528,0 L40.6110096,0 C43.9295472,0 46.62,2.80120813 46.62,6.25382419 L46.62,27.5362301 C46.62,29.8369475 45.4075776,31.9528683 43.4608272,33.0431681" fill-opacity="0.8" fill="url(#linearGradient-4)" style="mix-blend-mode: multiply;"></path>
+            <rect id="Rectangle" fill="#FFFFFF" fill-rule="nonzero" x="8.82" y="16.38" width="3.78" height="3.78" rx="1.386"></rect>
+            <rect id="Rectangle" fill="#FFFFFF" fill-rule="nonzero" x="16.38" y="16.38" width="13.86" height="3.78" rx="1.386"></rect>
+            <rect id="Rectangle" fill="#FFFFFF" fill-rule="nonzero" x="8.82" y="25.2" width="3.78" height="3.78" rx="1.386"></rect>
+            <rect id="Rectangle" fill="#FFFFFF" fill-rule="nonzero" x="16.38" y="25.2" width="13.86" height="3.78" rx="1.386"></rect>
+        </g>
+    </g>
+</svg>

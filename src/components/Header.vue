@@ -99,9 +99,6 @@ export default {
 }
 </style>
 <style >
-.el-input__inner {
-  height: 50px!important;
-}
 .el-input__icon {
     height: 100%;
     width: 25px;

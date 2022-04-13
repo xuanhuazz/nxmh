@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>新增</title>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="工作台" transform="translate(-432.000000, -852.000000)" fill="#0273FF" fill-rule="nonzero" stroke="#0273FF" stroke-width="0.4">
+            <g id="不同状态下的项目数量备份" transform="translate(16.000000, 440.000000)">
+                <g id="编组-8" transform="translate(0.000000, 56.000000)">
+                    <g id="编组-56" transform="translate(0.000000, 340.000000)">
+                        <g id="编组-5" transform="translate(417.000000, 14.000000)">
+                            <path d="M7,3 C7.28994949,3 7.525,3.23505051 7.525,3.525 L7.525,9.475 L13.475,9.475 C13.7649495,9.475 14,9.71005051 14,10 C14,10.2899495 13.7649495,10.525 13.475,10.525 L7.525,10.525 L7.525,16.475 C7.525,16.7649495 7.28994949,17 7,17 C6.71005051,17 6.475,16.7649495 6.475,16.475 L6.474,10.525 L0.525,10.525 C0.235050506,10.525 0,10.2899495 0,10 C0,9.71005051 0.235050506,9.475 0.525,9.475 L6.474,9.475 L6.475,3.525 C6.475,3.23505051 6.71005051,3 7,3 Z" id="新增"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
