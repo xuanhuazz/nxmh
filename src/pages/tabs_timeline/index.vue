@@ -1,6 +1,6 @@
 <template>
   <el-tabs v-model="activeName" @tab-click="handleClick">
-    <el-tab-pane label="代办" name="first" popper-class="tabs user">
+    <el-tab-pane label="待办" name="first" popper-class="tabs user">
       <First />
     </el-tab-pane>
     <el-tab-pane label="已办" name="second" class="tabs configure">

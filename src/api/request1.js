@@ -5,7 +5,7 @@ import nprogress from "nprogress";
 import 'nprogress/nprogress.css'
 
 const requests1 = axios.create({
-    baseURL:'/middle',
+    baseURL:'/gateway',
     timeout:10000    //访问大于5s取消
 })
 

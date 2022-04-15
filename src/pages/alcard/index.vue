@@ -1,9 +1,8 @@
 <template>
 <div>
     <div class="user">
-      <!-- <h1 @click="ddd">Nihao</h1> -->
       <div v-for="data in allData" :key="data.id">
-        <a :href="dataUrl(data)">
+        <a :href="dataUrl()">
           <img :src="icon(data)" alt="" />
           <span>{{data.title}}</span>
         </a>
@@ -16,6 +15,8 @@
 
 <script>
 import { mapState } from 'vuex';
+import CryptoJS from '@/api/crypto-js'
+import store from '@/store'
 export default {
   name: "Alcard",
   data() {
@@ -25,7 +26,8 @@ export default {
   },
   computed:{
       ...mapState({
-      dataList: (state) =>  state.func.dataList
+      dataList: (state) =>  state.func.dataList,
+      userName: state => state.func.userName
     }),
     allData(){
       if(this.dataList.length <= 12){
@@ -36,16 +38,32 @@ export default {
       }
     },
   },
-    
+  mounted(){
+  },
   methods: {
     // ddd() {
     //   console.log(this.icon());
     // },
-    dataUrl(data){
-      return 'http://10.200.100.55:5200' + data.url
+    dataUrl(){
+      let date = new Date();
+      let aaaa = {"code": store.state.func.userName, "date": date, "span": "240"};
+			let bbb = this.encrypt(aaaa);
+      let dfsdf ="http://10.200.100.55:5200/EsgSso.html?req="+bbb
+      return dfsdf
     },
     icon(data){
       return require('@/assets/navigation/' + data.icon);
+    },
+    encrypt(info){
+        let result = 'olvEsTYBHLQiWCsX';
+				let p = CryptoJS.enc.Utf8.parse;
+				let encrypt = CryptoJS.AES.encrypt;
+				let cy = CryptoJS;
+				let key = p(result + result);
+				let iv = p(result);
+				let encrypt_ked = encrypt(JSON.stringify(info), key,
+					{ keySize: 128 / 8, iv: iv, mode: cy.mode.CBC, padding: cy.pad.Pkcs7 }).toString();
+				return encrypt_ked;
     }
   },
 };

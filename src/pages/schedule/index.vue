@@ -1,8 +1,8 @@
 <template>
   <div class="schedule-content">
-    <i class="left-h"><img src="@/assets/images/日历左划.svg" alt=""></i>
-    <i class="left-r"><img src="@/assets/images/日历右划.svg" alt=""></i>
-    <el-calendar :range="['2022-4-3', '2022-04-09']" first-day-of-week= 7 v-model="time" >
+    <i class="left-h" style="cursor: pointer;"><img src="@/assets/images/日历左划.svg" alt="" @click="lastWeek"></i>
+    <i class="left-r" style="cursor: pointer;"><img src="@/assets/images/日历右划.svg" alt="" @click="nextWeek"></i>
+    <el-calendar :range="timeArr(a,b)" first-day-of-week= 7 v-model="time" >
         <template
         slot="dateCell"
         slot-scope="{date, data}">
@@ -15,7 +15,7 @@
       <div class="time" >
         <span v-for="(data,index) in schList" :key="index">{{data.startTime}}</span>
       </div>
-      <div class="timeline">
+      <div class="timeline" v-if="schList.length>0">
         <el-timeline>
           <el-timeline-item timestamp="2018/4/12"  hide-timestamp= true v-for="(data,index) in schList" :key="index">
             <el-card>
@@ -26,8 +26,11 @@
           </el-timeline-item>
         </el-timeline>
       </div>
+      <div v-else class="nothing">
+        暂无日程
+      </div>
     </div>
-    <div class="addNew" @click="addSchedule">
+    <div class="addNew" @click="addSchedule" style="cursor: pointer;">
         <i class="iconfont icon-jiahao1"></i> 新增日程
     </div>
     <!-- 新增日程隐藏框 -->
@@ -82,16 +85,13 @@ export default {
       value:'',
       time:new Date(),
       textarea:'',
-      dataList:[
-        {time:'2021',title:'我是标题',content:'内容'},
-        {time:'2022',title:'我是标题',content:'内容'},
-        {time:'2023',title:'我是标题',content:'内容'},
-        {time:'2024',title:'我是标题',content:'内容'},
-        {time:'2025',title:'我是标题',content:'内容'},
-      ]
+      a:0,
+      b:6
     }
   },
   mounted() {
+    this.range = this.timeArr(0,6)  //获取当前周数据
+    console.log(this.range.length);
     let el = document.getElementsByClassName("el-timeline-item__node--normal");
     console.log(el);
     for (let i = 0; i < el.length; i++) {
@@ -100,22 +100,7 @@ export default {
     this.$store.dispatch('schList',this.YYY(this.time))
   },
   computed:{
-    range(){
-      var nowTemp = new Date();//当前时间
-      var oneDayLong = 24*60*60*1000 ;//一天的毫秒数
-      var c_time = nowTemp.getTime() ;//当前时间的毫秒时间
-      var c_day = nowTemp.getDay()||7;//当前时间的星期几
-      var m_time = c_time - (c_day)*oneDayLong;//上周周日的毫秒时间
-      var s_time = c_time + (6-c_day)*oneDayLong;//当前周六的毫秒时间
-      var monday = new Date(m_time);//设置上周周日时间对象
-      var saturday = new Date(s_time);//设置周六时间对象
-      let startTime = this.YYY(monday)
-      let endTime = this.YYY(saturday)
-      let timearr = []
-      timearr.push(startTime)
-      timearr.push(endTime)
-      return timearr
-    },
+    
     ...mapState({
       schList:state => state.schedule.schList
     })
@@ -140,6 +125,33 @@ export default {
       setTimeout(()=>{
         this.$store.dispatch('schList',this.YYY(this.time))
       },100)
+    },
+    //获取周几的数据
+    nday(nowTemp,n){
+      //var nowTemp = new Date();//当前时间
+      var oneDayLong = 24*60*60*1000 ;//一天的毫秒数
+      var c_time = nowTemp.getTime() ;//当前时间的毫秒时间
+      var c_day = nowTemp.getDay()||7;//当前时间的星期几
+      var s_time = c_time + (n-c_day)*oneDayLong;//当前周n的毫秒时间
+      var nday = new Date(s_time);//设置周n时间对象
+      return nday
+    },
+    //获取周日-周一的数据
+    timeArr(a,b){
+      let startTime = this.YYY(this.nday(new Date(),a))
+      let endTime = this.YYY(this.nday(new Date(),b))
+      let timearr = []
+      timearr.push(startTime)
+      timearr.push(endTime)
+      return timearr
+    },
+    nextWeek(){
+      this.a = this.a + 7
+      this.b = this.b + 7
+    },
+    lastWeek(){
+      this.a = this.a-7
+      this.b = this.b-7
     }
     
   }
@@ -186,6 +198,13 @@ export default {
       width: 86%;
       margin-left: -5px;
     }
+    .nothing {
+      width: 100%;
+      height: 91%;
+      line-height: 170px;
+      text-align: center;
+      font-size: 30px;
+    }
   }
   .addNew {
     width: 100%;
@@ -228,11 +247,11 @@ export default {
         width: 93%;
         height: 40px!important;
       }
-}
-.dialog-footer {
+  }
+  .dialog-footer {
   margin-top: -21px;
   padding-right: 3.5%;
-}
+  }
 }
 .viewp{
   width: 100%;
@@ -328,6 +347,10 @@ export default {
 
 // tbody去掉border
 .current {
+  border: none !important;
+  padding: 0;
+}
+.next {
   border: none !important;
   padding: 0;
 }

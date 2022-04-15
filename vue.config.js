@@ -9,7 +9,7 @@ module.exports = {
           target: "http://10.200.100.55:5200/",
           changeOrigin: true
         },
-        "/middle": {
+        "/gateway": {
           target: "http://10.200.100.55:8313/",
           changeOrigin: true
         },

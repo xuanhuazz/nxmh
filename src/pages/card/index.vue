@@ -107,10 +107,11 @@ export default {
     return {
       dialogTableVisible: false,  //常用功能
       input: "",
-      chooseData: Object.values(JSON.parse(localStorage.getItem('COMMONLY'))) || [],
+      list:'list',
+      chooseData:  [],
       checked: false,
       checkModel: [],
-      list:'list'
+      
     };
   },
   watch: {
@@ -121,23 +122,40 @@ export default {
         this.checked = false;
       }
     },
-    chooseData: {
-      handler(newVal, oldVal) {
-      
-      },
-      deep: true
-}
   },
   mounted() {
+    console.log(this.checked);
     this.getData(this.list);  //获取全部功能
     this.getCommonly()  //获取常用功能
-    console.log(this.chooseData);
+    this.$store.dispatch('getUserName') //获取用户名称
+    this.chooseData = this.saveChooseData //修改已选框中内容为上次选择
+    this.checkModel = this.saveCheckModel
   },
   computed: {
     ...mapState({
       dataList: (state) => state.func.dataList,
       commonlyList: (state) => state.func.commonlyList,
     }),
+    saveChooseData(){
+      let result = []
+      if(localStorage.getItem('COMMONLY')){
+        let obj = JSON.parse(localStorage.getItem('COMMONLY'))
+        for (const key in obj) {
+            result.push(obj[key]) 
+        }
+      }
+      return result
+    },
+    saveCheckModel(){
+      let result = []
+      if(localStorage.getItem('COMMONLY')){
+        let obj = JSON.parse(localStorage.getItem('COMMONLY'))
+        for (const key in obj) {
+            result.push(obj[key].id) 
+        }
+      }
+      return result
+    },
   },
   methods: {
     icon(data){
@@ -149,7 +167,7 @@ export default {
     },
     //获取全部功能
     getData(params) {
-      this.$store.dispatch("dataList",params);
+      this.$store.dispatch("dataList",'list');
     },
     //获取常用功能
     getCommonly(){
@@ -158,24 +176,16 @@ export default {
     //全选功能
     chooseAll() {
       if (this.checked) {
-        console.log('全选没选上');
         this.checkModel = [];
         this.chooseData = []  //修改已选为空
       } else {
-        console.log('全选选上了哦');
-        //长度>11，则弹出第一个，最后面加一个
-        this.dataList.forEach((item) => {
-          if(this.chooseData.length < 11){
+          this.chooseData = []
+          this.dataList.forEach((item) => {
             this.chooseData.push(item)
-          } else {
-            this.chooseData.shift()
-            this.checkModel.shift()
-            this.chooseData.push(item)
-          }
-          if (this.checkModel.indexOf(item.id) == -1) {
-            this.checkModel.push(item.id);
-          }
-        });
+            if (this.checkModel.indexOf(item.id) == -1) {
+              this.checkModel.push(item.id);
+            }
+          });
       }
     },
     //添加功能到已选择
@@ -217,7 +227,6 @@ export default {
       this.dialogTableVisible = false
       this.$store.dispatch('funcList',Object.assign({},this.chooseData))
       localStorage.setItem('COMMONLY',JSON.stringify(Object.assign({},this.chooseData)))
-      console.log(this.chooseData);
       this.getCommonly()
     },
     //取消

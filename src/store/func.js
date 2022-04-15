@@ -1,9 +1,10 @@
 //引入请求数据的函数，分别暴露一定要记得加{}
-import {reqDataList,reqFuncList,reqCommonlyList} from  '@/api'
+import {reqDataList,reqFuncList,reqCommonlyList,reqGetUserName} from  '@/api'
 //创建action,mutation,state,getter对象
 const state = {
     dataList:[],
-    commonlyList:[]
+    commonlyList:[],
+    userName:''
 }
 const actions = {
     //获取全部功能
@@ -29,6 +30,13 @@ const actions = {
             commit('COMMONLYLIST',result.data)    
         }
      },
+     //获取UserName
+     async getUserName({commit},){
+        let result =  await reqGetUserName()    
+        if(result.code == 200){    //如果请求成功，result.code就是200
+            commit('GETUSERNAME',result.msg)    
+        }
+     },
 }
 const mutations = {
     DATALIST(state,dataList){
@@ -36,6 +44,9 @@ const mutations = {
     },
     COMMONLYLIST(state,commonlyList){
         state.commonlyList = commonlyList    //将数据交给state
+    },
+    GETUSERNAME(state,userName){
+        state.userName = userName    //将数据交给state
     }
 }
 const getters = {

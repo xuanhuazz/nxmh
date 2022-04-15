@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="logo">
-      <img src="@/assets/logo.png" alt="" />
+      <img src="@/assets/images/国徽1024.svg" alt="" />
     </div>
     <div class="title">宁夏国资国企在线监管系统</div>
     <div class="input">
@@ -13,7 +13,7 @@
         <img src="@/assets/logo.png" alt="">
       </div>
       <div class="name">
-        浪潮er
+        张冠军
       </div>
       <i class="iconfont icon-sanjiao1"></i>
     </div>
@@ -75,8 +75,8 @@ export default {
     // justify-content:space-around;
     align-items: center;
     .head {
-      width: 15%;
-      height: 35%;
+      width: 40px;
+      height: 40px;
       border: 1px solid white;
       border-radius: 50%;
       overflow: hidden;
