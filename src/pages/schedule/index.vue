@@ -2,11 +2,11 @@
   <div class="schedule-content">
     <i class="left-h" style="cursor: pointer;"><img src="@/assets/images/日历左划.svg" alt="" @click="lastWeek"></i>
     <i class="left-r" style="cursor: pointer;"><img src="@/assets/images/日历右划.svg" alt="" @click="nextWeek"></i>
-    <el-calendar :range="timeArr(a,b)" first-day-of-week= 7 v-model="time" >
+    <el-calendar :range="timeArr(a,b)" first-day-of-week= 7 >
         <template
         slot="dateCell"
         slot-scope="{date, data}">
-        <p class="viewp" @click="view">
+        <p class="viewp" @click="view(date)">
           {{data.day.slice(8,10)}}
         </p>
       </template>
@@ -83,21 +83,19 @@ export default {
           desc: ''
         },
       value:'',
-      time:new Date(),
+      time:'',
       textarea:'',
       a:0,
       b:6
     }
   },
   mounted() {
-    this.range = this.timeArr(0,6)  //获取当前周数据
-    console.log(this.range.length);
     let el = document.getElementsByClassName("el-timeline-item__node--normal");
     console.log(el);
     for (let i = 0; i < el.length; i++) {
       el[i].classList.add(`circle${i}`);
     }
-    this.$store.dispatch('schList',this.YYY(this.time))
+    this.$store.dispatch('schList',this.YYY(new Date()))
   },
   computed:{
     
@@ -121,9 +119,11 @@ export default {
       let day = date.getDate()<10?'0'+date.getDate():date.getDate()
       return date.getFullYear()+'-'+month+'-'+day
     },
-    view(){
+    view(date){
+      this.time = date
       setTimeout(()=>{
-        this.$store.dispatch('schList',this.YYY(this.time))
+        console.log('获取新内容');
+        this.$store.dispatch('schList',this.YYY(date))
       },100)
     },
     //获取周几的数据
@@ -148,10 +148,13 @@ export default {
     nextWeek(){
       this.a = this.a + 7
       this.b = this.b + 7
+      console.log(this.timeArr(this.a,this.b));
     },
     lastWeek(){
       this.a = this.a-7
       this.b = this.b-7
+      console.log(this.timeArr(this.a,this.b));
+
     }
     
   }

@@ -2,7 +2,7 @@
   <div>
     <div class="user">
       <div v-for="data in commonlyList" :key="data.id">
-        <a :href="data.url">
+        <a :href="dataUrl()">
           <img :src="icon(data)" alt="" />
           <span>{{ data.title }}</span>
         </a>
@@ -100,6 +100,8 @@
 <script>
 import { mapState } from "vuex";
 import vuedraggable from 'vuedraggable';
+import CryptoJS from '@/api/crypto-js'
+
 export default {
   name: "Card",
   components: {vuedraggable},
@@ -158,12 +160,29 @@ export default {
     },
   },
   methods: {
+    dataUrl(){
+      let date = new Date();
+      let aaaa = {"code": store.state.func.userName, "date": date, "span": "240"};
+			let bbb = this.encrypt(aaaa);
+      let dfsdf ="http://10.200.100.55:5200/EsgSso.html?req="+bbb
+      return dfsdf
+    },
+    encrypt(info){
+      let result = 'olvEsTYBHLQiWCsX';
+      let p = CryptoJS.enc.Utf8.parse;
+      let encrypt = CryptoJS.AES.encrypt;
+      let cy = CryptoJS;
+      let key = p(result + result);
+      let iv = p(result);
+      let encrypt_ked = encrypt(JSON.stringify(info), key,
+        { keySize: 128 / 8, iv: iv, mode: cy.mode.CBC, padding: cy.pad.Pkcs7 }).toString();
+      return encrypt_ked;
+    },
     icon(data){
       return require('@/assets/navigation/' + data.icon);
     },
     addCommon() {
       this.dialogTableVisible = true;
-      
     },
     //获取全部功能
     getData(params) {

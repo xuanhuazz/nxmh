@@ -2,25 +2,28 @@
 <div>
   <div class="block">
     <div class="logo">
-      <img src="@/assets/logo.png" alt="">
+      <img src="@/assets/images/IGIX系统.svg" alt="">
       <span>IGIX系统</span>
     </div>
     <div class="timeline">
       <el-timeline>
-        <el-timeline-item :timestamp="date(handle)" placement="top" v-for="(handle,index) in handleList" :key="index">
-          <el-card>
-            <h4>{{handle.title}}</h4>
-            <p>{{handle.startTime}}</p>
-          </el-card>
-        </el-timeline-item>
+        <a :href="handle.url" v-for="(handle,index) in handleList" :key="index">
+          <el-timeline-item :timestamp="date(handle)" placement="top" >
+            <el-card>
+              <h4>{{handle.title}}</h4>
+              <p>{{handle.startTime}}</p>
+            </el-card>
+          </el-timeline-item>
+        </a>
+        
       </el-timeline>
     </div>
   </div>
   <div class="line"></div>
   <div class="block">
     <div class="logo">
-      <img src="@/assets/logo.png" alt="">
-      <span>IGIX系统</span>
+      <img src="@/assets/images/协同办公系统.svg" alt="">
+      <span>协同办公系统</span>
     </div>
     <div class="timeline">
       <el-timeline>
@@ -48,8 +51,8 @@
   <div class="line"></div>
   <div class="block">
     <div class="logo">
-      <img src="@/assets/logo.png" alt="">
-      <span>IGIX系统</span>
+      <img src="@/assets/images/财务系统.svg" alt="">
+      <span>财务系统</span>
     </div>
     <div class="timeline">
       <el-timeline>
@@ -72,12 +75,12 @@ import { mapState } from 'vuex';
 export default {
   name: "First",
   mounted(){
-    this.$store.dispatch("handleList1",5)
+    this.$store.dispatch("handleList",5)
     this.date()
   },
   computed:{
     ...mapState({
-      handleList:state => state.handle.handleList1
+      handleList:state => state.handle.handleList
     }),
     
   },
