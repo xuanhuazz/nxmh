@@ -6,8 +6,8 @@ const state = {
 }
 const actions = {
 //reqCategoryList()请求回来是一个Promise函数，所以用async和await
-    async newsList({commit}){
-       let result =  await reqNewsList()    
+    async newsList({commit},num){
+       let result =  await reqNewsList(num)    
        if(result.code == 200){    //如果请求成功，result.code就是200
            commit('NEWSLIST',result.data)    
        }

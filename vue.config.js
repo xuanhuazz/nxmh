@@ -10,7 +10,7 @@ module.exports = {
           changeOrigin: true
         },
         "/gateway": {
-          target: "http://10.200.100.55:8313/",
+          target: "http://10.200.100.55:8314/",
           changeOrigin: true
         },
       },

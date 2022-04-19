@@ -13,7 +13,7 @@
     </el-calendar>
     <div class="block">
       <div class="time" >
-        <span v-for="(data,index) in schList" :key="index">{{data.startTime}}</span>
+        <span v-for="(data,index) in schList" :key="index">{{data.dateTime}}</span>
       </div>
       <div class="timeline" v-if="schList.length>0">
         <el-timeline>

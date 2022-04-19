@@ -3,8 +3,8 @@
     <ul>
       <li class="lili" v-for="(news,index) in newsList" :key="news.id">
         <div class="cir"></div>
-        <a :href="news.linkAddress" class="information">
-          {{news.title}}
+        <a :href="news.uri" class="information">
+          {{news.title.slice(0,45)}}
           <span class="new" v-if="index<2">NEW</span>
         </a>
         <a href="" class="date">{{news.addTime}}</a>
@@ -18,7 +18,7 @@ import { mapState } from 'vuex';
 export default {
   name: "News",
   mounted(){
-    this.$store.dispatch('newsList','1')
+    // this.$store.dispatch('newsList','2')
   },
   computed:{
     ...mapState({

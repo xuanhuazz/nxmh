@@ -10,7 +10,7 @@
           <Schedule />
         </div>
         <div class="bg-w left3">
-          <News />
+          <TabsNews />
         </div>
       </el-col>
       <el-col :span="10"><div class="bg-w right ">
@@ -22,12 +22,13 @@
 
 <script>
 import Tabs from "@/pages/tabs";
+import TabsNews from "@/pages/tabs_news";
 import TabsTimeLine from "@/pages/tabs_timeline";
 import Schedule from '@/pages/schedule'
 import News from '@/pages/news'
 export default {
   name: "Body",
-  components: { Tabs, TabsTimeLine,Schedule,News },
+  components: { Tabs, TabsTimeLine,Schedule,News,TabsNews },
 };
 </script>
 <style lang="less" scoped>
