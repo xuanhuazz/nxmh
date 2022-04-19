@@ -76,7 +76,6 @@ export default {
   name: "First",
   mounted(){
     this.$store.dispatch("handleList",2)
-    this.date()
   },
   computed:{
     ...mapState({
@@ -86,7 +85,7 @@ export default {
   },
   methods:{
     date(handle){
-      return handle.afterNow + '天前'
+      return handle['afterNow'] + '天前'
     }
   }
 };

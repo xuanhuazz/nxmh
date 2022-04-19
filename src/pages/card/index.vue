@@ -126,7 +126,6 @@ export default {
     },
   },
   mounted() {
-    console.log(this.checked);
     this.getData(this.list);  //获取全部功能
     this.getCommonly()  //获取常用功能
     this.$store.dispatch('getUserName') //获取用户名称

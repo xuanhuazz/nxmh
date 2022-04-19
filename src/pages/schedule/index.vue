@@ -2,7 +2,7 @@
   <div class="schedule-content">
     <i class="left-h" style="cursor: pointer;"><img src="@/assets/images/日历左划.svg" alt="" @click="lastWeek"></i>
     <i class="left-r" style="cursor: pointer;"><img src="@/assets/images/日历右划.svg" alt="" @click="nextWeek"></i>
-    <el-calendar :range="timeArr(a,b)" first-day-of-week= 7 >
+    <el-calendar :range="timeArr(a,b)" first-day-of-week= '7' >
         <template
         slot="dateCell"
         slot-scope="{date, data}">
@@ -43,7 +43,7 @@
             <el-form-item label="内容">
               <el-input type="textarea" :rows="3" v-model="form.content" class="neirong" ref="inp"></el-input>
             </el-form-item>
-          <el-form-item label="时间" :label-width="formLabelWidth">
+          <el-form-item label="时间" >
                 <el-date-picker
                   v-model="value"
                   type="datetimerange"
@@ -91,7 +91,6 @@ export default {
   },
   mounted() {
     let el = document.getElementsByClassName("el-timeline-item__node--normal");
-    console.log(el);
     for (let i = 0; i < el.length; i++) {
       el[i].classList.add(`circle${i}`);
     }
@@ -148,13 +147,10 @@ export default {
     nextWeek(){
       this.a = this.a + 7
       this.b = this.b + 7
-      console.log(this.timeArr(this.a,this.b));
     },
     lastWeek(){
       this.a = this.a-7
       this.b = this.b-7
-      console.log(this.timeArr(this.a,this.b));
-
     }
     
   }
